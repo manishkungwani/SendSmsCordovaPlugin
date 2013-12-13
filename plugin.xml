@@ -1,0 +1,39 @@
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="net.webootu.cordova.plugin.SendSms"
+    version="0.4.1">
+
+    <name>Send SMS</name>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <description>This plugin allows you to send an SMS from your app.</description>
+    <author>Dimitrios Mistriotis - WeBootU</author>
+    <keywords>SMS,message,text message</keywords>
+
+    <license>MIT</license>
+
+    <js-module src="www/Canvas2ImagePlugin.js" name="Canvas2ImagePlugin">
+        <clobbers target="window.canvas2ImagePlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.SEND_SMS"/>
+        </config-file>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+          <feature name="SendSms" >
+            <param name="android-package" value="net.webootu.cordova.plugin.SendSms"/>
+          </feature>
+        </config-file>
+
+        <source-file src="src/net/webootu/cordova/plugin/SendSMS.java"
+            target-dir="src/net/webootu/cordova/plugin" />
+
+    </platform>
+</plugin>
