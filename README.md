@@ -2,6 +2,8 @@ SendSmsCordovaPlugin
 ====================
 
 A plugin to send SMSes using apache Cordova, developed against version 2.3.0
+This fork was setup to make the plugin Icenium compatible.
+Added SendSMS.js and plugin.xml to the plugin.
 
 Setup
 -----
