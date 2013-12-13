@@ -15,8 +15,8 @@
 
     <license>MIT</license>
 
-    <js-module src="www/Canvas2ImagePlugin.js" name="Canvas2ImagePlugin">
-        <clobbers target="window.canvas2ImagePlugin" />
+    <js-module src="www/SendSMS.js" name="SendSMS">
+        <clobbers target="window.SendSMS" />
     </js-module>
 
     <!-- android -->
@@ -27,12 +27,11 @@
         </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">
-          <feature name="SendSms" >
-            <param name="android-package" value="net.webootu.cordova.plugin.SendSms"/>
-          </feature>
+			<plugin name="SendSms"
+                value="net.webootu.cordova.plugin.SendSms"/>
         </config-file>
 
-        <source-file src="src/net/webootu/cordova/plugin/SendSMS.java"
+        <source-file src="SendSMS.java"
             target-dir="src/net/webootu/cordova/plugin" />
 
     </platform>

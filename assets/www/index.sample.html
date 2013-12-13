@@ -36,24 +36,25 @@
                     <a href="#" onclick="return sendSmsDemo();return false;">Send Sms Demo</a>
                     <script type="text/javascript" src="json2.js"></script>
                     <script type="text/javascript">
-                    sendSmsDemo = function() {
-                        cordova.exec(function(winParam) {
-                                // Use the following line if json2 library is present.
-                                // Available from Douglas Crockford's github page here:
-                                // https://github.com/douglascrockford/JSON-js/blob/master/json2.js
-                                console.log( JSON.stringify(winParam) );
-                                alert(winParam.sms_send);
-                            }
-                            , function(error) {
-                                alert("An error has occurred");
-                                console.log("An error has occurred");
-                                // Please refer to previous comment about json2 library.
-                                console.log( JSON.stringify(error) );
-                            }
-                            , "SendSms"
-                             ,"SendSms"
-                             , ["TESTNUM", "This is random text."]);
-                    }
+					sendSmsDemo = function(){
+						window.plugins.SendSMS.send(
+							function(winParam) {
+								// Use the following line if json2 library is present.
+								// Available from Douglas Crockford's github page here:
+								// https://github.com/douglascrockford/JSON-js/blob/master/json2.js
+								console.log( JSON.stringify(winParam) );
+								alert(winParam.sms_send);
+							},
+							function(error) {
+								alert("An error has occurred");
+								console.log("An error has occurred");
+								// Please refer to previous comment about json2 library.
+								console.log( JSON.stringify(error) );
+							}, {
+								"phoneNumber":"ACTUAL PHONE NUMBER",
+								"message":"ACTUAL MESSAGE TEXT"
+							});
+					}
                     </script>
                 </p>
             </div>
